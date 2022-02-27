@@ -9,7 +9,6 @@ def insert_last(lst, e):
     ind = e - 1
     while ind >=0 and lst[ind] > i_val:
         lst[ind + 1] = lst[ind]
-        #print_lst(lst)
         ind -= 1
 
     lst[ind + 1] = i_val
@@ -18,13 +17,6 @@ def insert_last(lst, e):
 
 def insert_sort(lst):
     n = len(lst)
-    # idx = n - 1
-    # val = lst[idx]
-    # while idx > 0:
-    #     insert_last(lst, idx)
-    #     if val == lst[idx]:
-    #         idx -= 1
-    #     val = lst[idx]
     idx = 1
     while idx < n:
         insert_last(lst, idx)
@@ -33,6 +25,5 @@ def insert_sort(lst):
 
 if __name__ == '__main__':
     lst = [3,2,1,5,6,9, 8]
-    #insert_last(lst, len(lst) - 1)
     insert_sort(lst)
     print(lst)
