@@ -2,6 +2,8 @@ import time
 import random
 import threading
 
+# This is a good candidate for parallel computing.
+
 th_ret = []
 def merge(llst, rlst):
     lptr = 0
@@ -17,10 +19,9 @@ def merge(llst, rlst):
 
     ret.extend(llst[lptr:])
     ret.extend(rlst[rptr:])
-
     return ret
 
-
+# normal merge sort
 def merge_sort(lst):
     if len(lst) == 1:
         return lst
@@ -28,10 +29,14 @@ def merge_sort(lst):
     mid = int(len(lst)/2)
     return merge(merge_sort(lst[:mid]), merge_sort(lst[mid:]))
 
+
+# need to wrap to return to a global variable.
 def wrapper(lst):
     global th_ret
     th_ret = merge_sort(lst)
 
+
+# do it in parallel
 def merge_par(lst):
     mid = int(len(lst)/2)
     llst = merge_sort(lst[:mid])
