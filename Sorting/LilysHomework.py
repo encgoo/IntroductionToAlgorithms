@@ -8,7 +8,8 @@
 #    and _stays_
 # 5. We need to do the swap one by one to count
 
-
+# Note this is a good example for parallel computing. The increment order and decrement order are
+# basically independent, and can be done in separated threads.
 def count(lst, slst):
     d = dict()
     for i in range(len(slst)):
