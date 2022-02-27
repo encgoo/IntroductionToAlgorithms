@@ -1,16 +1,19 @@
 def bubble_sort(lst):
 
     n = len(lst)
-    # when i = 0, it bubbles the max to the end
-    # when i = 1, it bubbles the second max to the second last pos
-    for i in range(n-1):
-        for j in range(n-i-1):
-            if lst[j] > lst[j+1]:
+    e = n - 1
+    # don't need e = 0 because the last one must be automatically sorted
+    while e > 0:
+        j = 0
+        # need e - 1 because we need to sway
+        while j <= e - 1:
+            if lst[j] > lst[j + 1]:
                 lst[j], lst[j+1] = lst[j+1], lst[j]
-                print(lst)
+            j += 1
+        e -= 1
 
 if __name__ == '__main__':
-    lst = [1,8,9,2]
+    lst = [1, 10,2,9, 3, 8, 4, 6, 5, 7]
 
     bubble_sort(lst)
     print(lst)
