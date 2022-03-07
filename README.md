@@ -7,6 +7,6 @@ Review of this book used in Master program back in BU.
 Most of the programs are done in python and C++.
 
 ## Parallel computing
-Some algorithm can be done in parallel. A good example is [merge sort](./ParallelComputing/MergeSort.py). 
+Some algorithms can be done in parallel. A good example is [merge sort](./ParallelComputing/MergeSort.py). A list can be splited into two. Use two threads to sort them, and then merge the final result.
 
 
