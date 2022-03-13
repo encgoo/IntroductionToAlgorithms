@@ -1,5 +1,5 @@
 # https://www.programcreek.com/2013/03/leetcode-lru-cache-java/
-
+# almost like a queue. But need random access/edit. So use a double linked list
 from collections import defaultdict
 
 
